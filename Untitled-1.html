@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio Interativo</title>
+  <style>
+    /* Estilo Geral */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #121212;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(18, 18, 18, 0.9);
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #4caf50;
+    }
+    header nav a {
+      margin-left: 20px;
+      font-size: 16px;
+      color: #ccc;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #4caf50;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(to bottom, #202020, #121212);
+    }
+    .hero h1 {
+      font-size: 50px;
+      color: #4caf50;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+      color: #ccc;
+    }
+    .hero button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .hero button:hover {
+      background: #3b9b40;
+      transform: scale(1.1);
+    }
+
+    /* Sobre Mim */
+    .about {
+      padding: 50px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background: #181818;
+    }
+    .about img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 5px solid #4caf50;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.5s, box-shadow 0.5s;
+    }
+    .about img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    }
+    .about-content {
+      max-width: 600px;
+    }
+    .about-content h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #4caf50;
+    }
+    .about-content p {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    /* Certificados */
+    .certificates {
+      padding: 50px;
+      background: #202020;
+    }
+    .certificates h2 {
+      text-align: center;
+      font-size: 36px;
+      color: #4caf50;
+      margin-bottom: 30px;
+    }
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+    .certificate {
+      height: 150px;
+      background: #333;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      color: #ccc;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      padding: 10px;
+    }
+    .certificate:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      background: #4caf50;
+      color: white;
+    }
+
+    /* Contact */
+    .contact {
+      padding: 50px;
+      background: #181818;
+      text-align: center;
+    }
+    .contact h2 {
+      font-size: 36px;
+      color: #4caf50;
+      margin-bottom: 20px;
+    }
+    .contact-form {
+      max-width: 500px;
+      margin: auto;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: #333;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+    }
+    .contact-form button {
+      width: 100%;
+      padding: 15px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .contact-form button:hover {
+      background: #3b9b40;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px;
+      text-align: center;
+      background: #121212;
+      color: #666;
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Meu Portfólio</div>
+    <nav>
+      <a href="#about">Sobre</a>
+      <a href="#certificates">Certificados</a>
+      <a href="#contact">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h1>Bem-vindo ao Meu Portfólio</h1>
+      <p>
+        Olá, sou [Seu Nome], um entusiasta da tecnologia e do aprendizado constante. Aqui você pode conhecer mais sobre mim e meus trabalhos.
+      </p>
+      <button>Saiba Mais</button>
+    </div>
+  </section>
+
+  <!-- Sobre Mim -->
+  <section id="about" class="about">
+    <img src="https://via.placeholder.com/300" alt="Minha Foto">
+    <div class="about-content">
+      <h2>Sobre Mim</h2>
+      <p>
+        Sou apaixonado por tecnologia e por criar soluções inovadoras. Com 17 certificados e uma trajetória de aprendizado constante, estou sempre em busca de novos desafios.
+      </p>
+    </div>
+  </section>
+
+  <!-- Certificados -->
+  <section id="certificates" class="certificates">
+    <h2>Meus Certificados</h2>
+    <div class="certificates-grid">
+      <!-- 17 espaços para certificados -->
+      <div class="certificate">Certificado 1</div>
+      <div class="certificate">Certificado 2</div>
+      <div class="certificate">Certificado 3</div>
+      <div class="certificate">Certificado 4</div>
+      <div class="certificate">Certificado 5</div>
+      <div class="certificate">Certificado 6</div>
+      <div class="certificate">Certificado 7</div>
+      <div class="certificate">Certificado 8</div>
+      <div class="certificate">Certificado 9</div>
+      <div class="certificate">Certificado 10</div>
+      <div class="certificate">Certificado 11</div>
+      <div class="certificate">Certificado 12</div>
+      <div class="certificate">Certificado 13</div>
+      <div class="certificate">Certificado 14</div>
+      <div class="certificate">Certificado 15</div>
+      <div class="certificate">Certificado 16</div>
+      <div class="certificate">Certificado 17</div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contact" class="contact">
+    <h2>Entre em Contato</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Seu Nome" required>
+      <input type="email"
+placeholder="Seu Email" required>
+      <textarea rows="5" placeholder="Sua Mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 - Desenvolvido por [Seu Nome]
+  </footer>
+</body>
+</html>
